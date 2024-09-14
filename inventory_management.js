@@ -11,3 +11,22 @@ const inventory= [
  
  console.log("Inventory:",(inventory)); //Logging Array of Inventory details 
  
+ //Task 2: Creating a Function to Display Product Details 
+
+// Creating a function that accepts a product and logs the products information
+function displayProductDetails(product) {
+    let{name,price,quantity,lowStockLevel}= product
+    const inventoryLevel= quantity <= lowStockLevel ? "Low Stock" : "In Stock" //Determining Inventory Level
+ 
+    console.log ("Product Name:", name); //Logging product name
+    console.log ("Product Price:",price); //Logging product price
+    console.log ("Product Quantity:",quantity); //Logging product quantity
+    console.log ("Product Inventory Level:", inventoryLevel); //Logging product inventory level
+ 
+    };
+ 
+ let productFunctionTest = {name: "Gummy Bears", price: 3.50, quantity: 32, lowStockLevel:15}; //Testing the function 
+ 
+ console.log(displayProductDetails(productFunctionTest)); //Output: In Stock
+ 
+ 
