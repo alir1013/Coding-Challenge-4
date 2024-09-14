@@ -29,4 +29,26 @@ function displayProductDetails(product) {
  
  console.log(displayProductDetails(productFunctionTest)); //Output: In Stock
  
+ //Task 3: Create a Function to Update Product Stock After Sales
+
+//Creating a function that accepts a product and determines whether the product is low on stock or out of stock
+function updateStock(product,unitsSold) {
+    let updatedQuantity= product.quantity -= unitsSold; //Subtracting unitsSold by quantity
+ 
+    console.log ("Updated Product Details:");
+ 
+    const inventoryLevel = updatedQuantity <= 0 ? "Out of Stock" : updatedQuantity <= product.lowStockLevel ? "Low Stock"://Ternary Operation to display the inventory level of a product 
+
+    console.log("Updated Inventory Level:", inventoryLevel); 
+ 
+    displayProductDetails(product);
+ 
+    return product; //Returning the updated product details
+ 
+ };
+ 
+ updateStock(inventory[4],22); // This will subtract 22 from the quantity of gummybears 
+ 
+ console.log ("New Updated Inventory Level:",(inventory[4])) //Output: Low Stock
+ 
  
