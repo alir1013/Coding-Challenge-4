@@ -16,7 +16,7 @@ const inventory= [
 // Creating a function that accepts a product and logs the products information
 function displayProductDetails(product) {
     let {name,price,quantity,lowStockLevel} = product
-    console.log ("Product Details:"); //Title
+    
     const inventoryLevel= quantity <= lowStockLevel ? "Low Stock" : "In Stock" //Determining Inventory Level
  
     console.log ("Product Name:", name); //Logging product name
