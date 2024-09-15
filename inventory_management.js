@@ -66,7 +66,17 @@ function checkLowStock(inventory) {
 
 //Creating a function that iterates over the inventory array and returns the Products in stock
 function calculateInventoryValue (inventory){
-    return inventory.reduce ((totalValueOfAllProducts,product) =>   // returns the total value of all products
-     totalValueOfAllProducts + (product.price * product.quantity), 0);//Formula to calculate the value of all products
+    let totalValue = 0;
+    for(let i= 0; i < inventory.length; i++){
+        totalValue += inventory [i].price * inventory [i].quantity; //formula to calculate the value of all products
     }
-    console.log("Total Inventory Value of All Products:",calculateInventoryValue(inventory)); // Output: 583.85
+    return totalValue; //returns the total value of all products
+}
+let totalInventoryValue= calculateInventoryValue (inventory);
+    console.log (`Total Inventory Value of All Products: $${totalInventoryValue}`); // Output:$583.85
+
+//Task 6: Creating a Function to Process a Sale
+
+//Creating a function that accepts a product name and the number of units solds
+
+
