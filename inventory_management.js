@@ -29,7 +29,7 @@ function displayProductDetails(product) {
  
  console.log(displayProductDetails(productFunctionTest)); //Output: In Stock
  
- //Task 3: Create a Function to Update Product Stock After Sales
+ //Task 3: Creating a Function to Update Product Stock After Sales
 
 //Creating a function that accepts a product and determines whether the product is low on stock or out of stock
 function updateStock(product,unitsSold) {
@@ -50,5 +50,17 @@ function updateStock(product,unitsSold) {
  updateStock(inventory[4],22); // This will subtract 22 from the quantity of gummybears 
  
  console.log ("New Updated Inventory Level:",(inventory[4])) //Output: Low Stock
+
+ //Task 4: Creating a function to Check Low Stock Products
+
+ //Creating a function that iterates over the inventory array and logs the names of the products that have a low stock level
+function checkLowStock(inventory) {
+    const lowStock= inventory.filter(product => product.quantity <= product.lowStockLevel); //Using the filter function to filter out products
+    lowStock.forEach(product => {
+        console.log ("Products with Low Stock:", `${product.name}: ${product.quantity}`); //Output:
+    } );
+}
+ checkLowStock(inventory); //Utilizing the function created 
+
  
  
