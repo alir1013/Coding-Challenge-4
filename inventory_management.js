@@ -79,4 +79,20 @@ let totalInventoryValue= calculateInventoryValue (inventory);
 
 //Creating a function that accepts a product name and the number of units solds
 
+console.log()
+function processSale(productName,unitsSold){
+const locateProduct = inventory.find((product) => product.name === productName); // Locating Product in the inventory array by name
+
+//If-else statement to determine if an item is found or not 
+if(locateProduct){
+    updateStock(locateProduct,unitsSold); // Calling updateStock function to reduce quantity
+    console.log (`${productName} is found`); 
+
+} else { 
+    console.log (`Error:${productName} NOT found`);
+}
+    }
+
+    processSale("Gummy Bears", 8,); // Output: Gummy Bears is found
+   
 
